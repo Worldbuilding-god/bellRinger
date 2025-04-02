@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animations with jQuery</title>
+    <style>
+        p{
+            font-size: 10px;
+        }
+    </style>
+</head>
+<body>
+    <p id="myElement">This will grow to 20px</p>
+    <script>
+        let element = document.getElementById('myElement');
+        let textSize = 10;
+
+        let intervalId = setInterval(growText, 2000);
+
+        function growText() {
+        if (textSize == 20) {
+            clearInterval(intervalId);
+        } else {
+            textSize++;
+            element.style.fontSize = textSize + 'px';
+        }
+        }
+    </script>
+</body>
+</html>
